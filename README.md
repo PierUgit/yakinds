@@ -17,16 +17,16 @@ The module provides REAL / INTEGER / LOGICAL kind constants, based on three prin
 - r_default : the default real (kind(1.0))
 - r_doubleprecision : the "double precision" real (kind(1d0))
 - r_half         (half precision):          precision >= 3,  range >= 5     
-- r_single       (single precision):        precision >= 6,  range >= 37    **
-- r_sesqui       (1.5x precision):          precision >= 10, range >= 37    **
-- r_double       (double precision):        precision >= 12, range >= 100   * x
-- r_extended     (extended precision):      precision >= 18, range >= 100   * x
-- r_doubledouble (double-double precision): precision >= 24, range >= 100     x
-- r_quad         (quadruple precision):     precision >= 24, range >= 1000    x
+- r_single       (single precision):        precision >= 6,  range >= 37    (**)
+- r_sesqui       (1.5x precision):          precision >= 10, range >= 37    (**)
+- r_double       (double precision):        precision >= 12, range >= 100   (* x)
+- r_extended     (extended precision):      precision >= 18, range >= 100   (* x)
+- r_doubledouble (double-double precision): precision >= 24, range >= 100     (x)
+- r_quad         (quadruple precision):     precision >= 24, range >= 1000    (x)
 
-** : these kinds are necessarily either r_default or r_doubleprecision
-* : these kinds are r_default or r_doubleprecision in priority (if possible)
-x : no guarantee to meet the requirements
+(**) : these kinds are necessarily either r_default or r_doubleprecision  
+(*) : these kinds are r_default or r_doubleprecision in priority (if possible)  
+(x) : no guarantee to meet the requirements
 
 Note that Fortran standard:
 - *recommends* precision(0.0) >= 6,  range(0.0) >= 37
@@ -42,12 +42,12 @@ Note that Fortran standard:
 - i_default : the default integer (kind(0))
 - i_shorter :         range >= 2
 - i_short :           range >= 4
-- i_medium :          range >= 9    *
-- i_long :            range >= 18   *
-- i_longer :          range >= 36     x
+- i_medium :          range >= 9    (*)
+- i_long :            range >= 18   (*)
+- i_longer :          range >= 36     (x)
 
-* : these kinds are i_default in priority (if possible)
-x : no guarantee to meet the requirements
+(*) : these kinds are i_default in priority (if possible)  
+(x) : no guarantee to meet the requirements
 
 Note that the standard requires the compilers to provide an integer with a range >= 18.
 Consequently, only i_longer is not guaranteed to meet the requirements (in that case, 
