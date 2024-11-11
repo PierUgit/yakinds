@@ -1,0 +1,21 @@
+name = "yakinds"
+description = "Yet Another Kind constantS"
+version = "1.0.0"
+categories = [""]
+license = "GPL-3.0-only"
+author = "Pierre Hugonnet"
+maintainer = "Pierre Hugonnet"
+copyright = "Copyright 2024, Pierre Hugonnet"
+homepage = "https://github.com/PierUgit/yakinds"
+[build]
+auto-executables = true
+auto-tests = true
+auto-examples = true
+module-naming = true
+[install]
+library = false
+[fortran]
+implicit-typing = false
+implicit-external = false
+source-form = "free"
+
